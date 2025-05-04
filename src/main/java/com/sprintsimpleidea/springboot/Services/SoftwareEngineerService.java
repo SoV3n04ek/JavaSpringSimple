@@ -18,5 +18,22 @@ public class SoftwareEngineerService {
 
     public List<SoftwareEngineer> getAllSoftwareEngineers() {
         return softwareEngineerRepository.findAll();
-    };
+    }
+
+    // TODO: replace arg to DTO
+    public void insertSoftwareEngineer(
+            SoftwareEngineer softwareEngineer
+    ) {
+        // TODO: add not null & validation
+        softwareEngineerRepository.save(softwareEngineer);
+    }
+
+    public SoftwareEngineer getSoftwareEngineerById(
+            Integer id
+    ) {
+        return softwareEngineerRepository.findById(id)
+                .orElseThrow(() -> new IllegalStateException(
+                        "SoftwareEngineer with id " + id + " not found"
+                ));
+    }
 }
