@@ -17,4 +17,6 @@ public class Application {
     public String helloWorld() {
         return "Hello World of spring boot";
     }
+
+
 }
